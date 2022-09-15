@@ -1,0 +1,16 @@
+{
+  "name": "neuapp",
+  "version": "1.0.0",
+  "scripts": {
+    "dev:front": "cd app && yarn run serve",
+    "dev:app": "neu run --frontend-lib-dev",
+    "dev": "concurrently \"yarn run dev:app\" \"yarn run dev:front\"",
+    "build:front": "cd app && yarn run build",
+    "build:app": "neu build --release",
+    "build": "concurrently \"yarn run build:front\" \"yarn run build:app\"",
+    "build2": "yarn run build:front && yarn run build:app"
+  },
+  "dependencies": {
+    "concurrently": "^7.3.0"
+  }
+}
