@@ -2,7 +2,7 @@
   "applicationId": "js.neutralino.sample",
   "version": "1.0.0",
   "defaultMode": "window",
-  "port": 0,
+  "port": 5804,
   "documentRoot": "/app/dist/",
   "url": "/",
   "enableServer": true,
@@ -15,23 +15,16 @@
   "nativeAllowList": [
     "app.*",
     "os.*",
+    "filesystem.*",
+    "storage.*",
     "debug.log"
   ],
   "globalVariables": {
-    "TEST1": "Hello",
-    "TEST2": [
-      2,
-      4,
-      5
-    ],
-    "TEST3": {
-      "value1": 10,
-      "value2": {}
-    }
+    "NL_PORT": 5804
   },
   "modes": {
     "window": {
-      "title": "neuapp",
+      "title": "lotOfQrcode",
       "width": 800,
       "height": 500,
       "minWidth": 400,
@@ -46,42 +39,45 @@
       "resizable": true,
       "exitProcessOnClose": true,
       "nativeAllowList": [
-        "app.*"
+        "app.*",
+        "os.*",
+        "filesystem.*",
+        "storage.*"
       ]
     },
     "browser": {
       "globalVariables": {
         "TEST": "Test value browser"
-      },
-      "nativeBlockList": [
-        "filesystem.*"
-      ]
+      }
     },
     "cloud": {
       "url": "/resources/#cloud",
       "nativeAllowList": [
-        "app.*"
+        "app.*",
+        "os.*",
+        "filesystem.*"
       ]
     },
     "chrome": {
       "width": 800,
       "height": 500,
       "args": "--user-agent=\"Neutralinojs chrome mode\"",
-      "nativeBlockList": [
-        "filesystem.*",
-        "os.*"
+      "nativeAllowList": [
+        "app.*",
+        "os.*",
+        "filesystem.*"
       ]
     }
   },
   "cli": {
-    "binaryName": "neuapp",
+    "binaryName": "lotOfQrcode",
     "resourcesPath": "/app/dist/",
     "extensionsPath": "/extensions/",
     "clientLibrary": "/resources/js/neutralino.js",
     "binaryVersion": "4.7.0",
     "clientVersion": "3.6.0",
     "frontendLibrary": {
-      "patchFile": "/app/public/index.html",
+      "patchFile": "/app/dist/index.html",
       "devUrl": "http://localhost:5840"
     }
   }
